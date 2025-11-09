@@ -1,0 +1,67 @@
+python run_dpsk_ocr.py
+You are using a model of type deepseek_vl_v2 to instantiate a model of type DeepseekOCR. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+Some weights of DeepseekOCRForCausalLM were not initialized from the model checkpoint at deepseek-ai/DeepSeek-OCR and are newly initialized: ['model.vision_model.embeddings.position_ids']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/opt/miniforge/envs/deepseek-ocr/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:590: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.0` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+`get_max_cache()` is deprecated for all Cache classes. Use `get_max_cache_shape()` instead. Calling `get_max_cache()` will raise error from v4.48
+=====================
+BASE:  torch.Size([1, 400, 1280])
+PATCHES:  torch.Size([6, 100, 1280])
+=====================
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+総合力タログ
+NO.76
+
+A 硝子引戸金物 ......P.34～
+用途別 プラン一覧 ......P.38～
+上下レール別 組合せ一覧 ......P.105～
+硝子厚別 部材一覧 ......P.119～
+資料、ハカマ、硝子加工図 ......P.166～ ベアリングの仕様 ......P.169
+金物ひとくちメモ ......P.171～
+
+B 硝子開き戸金物 ......P.173～
+C 破損止・アングル・フラットバー ......P.229～
+D 錠前 ......P.258～
+E ミラー金物 ......P.273～
+F サイン金物 ......P.287～
+G 棚受金物 ......P.308～
+H パイプ・ブラケット ......P.337～
+I 間仕切金物 ......P.346～
+J 座敷金物 ......P.354～
+K 品名差 ......P.358～
+L その他家具金物 ......P.363～
+M 硝子接着剤・その他 ......P.372～
+
+後付け資料
+・限定在庫品リスト ......P.375～
+・硝子の重量計算表 ......P.379
+・加工サービス ......P.380
+・材料、仕上げ一覧 ......P.381
+
+会社案内
+・品質管理・安全対策 ......P.383
+・事業所・所在地 ......P.384
+・企業 PROFILE ......P.385
+
+商品検索
+●カテゴリから探す ......P.2～
+●図面ダウンロードのご案内 ......P.4～
+●街の中の999製品 ......P.6～
+●施工イメージで探す ......P.8～
+●悩み解消グッズ大集合 ......P.12～
+●コード・上代価格一覧より探す ......P.15～
+●商品名一覧より探す ......P.32～
+==================================================
+image size:  (1241, 1754)
+valid image tokens:  883
+output texts tokens (valid):  435
+compression ratio:  0.49
+==================================================
+===============save results:===============

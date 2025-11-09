@@ -1,0 +1,93 @@
+python run_dpsk_ocr.py
+You are using a model of type deepseek_vl_v2 to instantiate a model of type DeepseekOCR. This is not supported for all configurations of models and can yield errors.
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+Some weights of DeepseekOCRForCausalLM were not initialized from the model checkpoint at deepseek-ai/DeepSeek-OCR and are newly initialized: ['model.vision_model.embeddings.position_ids']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/opt/miniforge/envs/deepseek-ocr/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:590: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.0` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+`get_max_cache()` is deprecated for all Cache classes. Use `get_max_cache_shape()` instead. Calling `get_max_cache()` will raise error from v4.48
+=====================
+BASE:  torch.Size([1, 400, 1280])
+PATCHES:  torch.Size([6, 100, 1280])
+=====================
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+G
+ハシゴ棚受 ......P.309～
+ワーカラン ......P.315～
+アルミ100番棚受 ......P.317～
+
+アルミ150番棚受 ......P.319
+ステン300番棚受 ......P.320～
+ステン500番棚受 ......P.323～
+
+G
+アイクロポスト（コロビ止め） ......P.338～
+ステンバイブ ......P.339～
+ブラケット ......P.340～
+
+アイバブソケット ......P.341
+ソケット ......P.342
+継ぎバイブ ......P.343～
+
+H
+グラスサポート ......P.347
+SC ポール（間仕切りポール） ......P.348～
+カウンター チャンネル ......P.347
+折り ......P.356
+品名プレート ......P.362
+厚口品名差 ......P.361
+立付品名差 ......P.360
+品名差用塩ビ板 ......P.359
+長型品名差 ......P.360
+
+H
+アイバブソケット ......P.341
+ソケット ......P.342
+続きバイブ ......P.343～
+
+H
+厚口破損止 ......P.351
+パーテーション チャンネル ......P.351
+ニートポール ......P.352
+
+H
+三福対 ......P.356
+鴨居掛・長押掛 ......P.357
+
+J
+品名プレート ......P.362
+厚口品名差 ......P.361
+
+J
+品名差用塩ビ板 ......P.359
+品名差用塩ビ板 ......P.359
+長型品名差 ...... P.360
+
+K
+耐震ラッチ ......P.364
+ハンドル アジャスター ......P.365
+UV 接着剤（レイク） ......P.373
+UV LEDライト ......P.373
+
+K
+キャスター ......P.366
+二枚合長蝶番 ......P.366
+替刃式鉤 ......P.374
+ビス ......P.374
+
+M
+スライドレール ......P.367～
+==================================================
+image size:  (1241, 1754)
+valid image tokens:  883
+output texts tokens (valid):  467
+compression ratio:  0.53
+==================================================
+===============save results:===============
+image: 0it [00:00, ?it/s]
+other: 0it [00:00, ?it/s]
